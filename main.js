@@ -10,10 +10,15 @@ const listaDeTeclas = document.querySelectorAll('.tecla');
 
 let contador = 0;
 
-while(contador <9){
-
-    listaDeTeclas[contador].onclick = tocaSomPom;
+while(contador < listaDeTeclas.length) {
+    const efeito = listaDeTeclas[contador].classList[1];
+    const idAudio = "#som_"+efeito;
+    listaDeTeclas[contador].onclick = function()
+    {
+        tocaSom(this.idAudio);
+    }
     contador = contador + 1;
     console.log(contador);
 
 }
+
